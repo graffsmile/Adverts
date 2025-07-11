@@ -1,0 +1,11 @@
+services:
+  db:
+    container_name: db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: unless-stopped
+    ports:
+      - 5432:5432
